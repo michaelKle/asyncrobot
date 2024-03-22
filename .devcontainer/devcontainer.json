@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Async Python and Robot Tests",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": ".."
+	},
+	"containerEnv": {
+		"DEVCONTAINER": "true",
+		"PYTHONPATH": "${containerWorkspaceFolder}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"robocorp.robotframework-lsp",
+				"ms-python.pylint"
+			],
+			"settings": {
+				"robot.codeFormatter": "robotidy",
+				"robot.pythonpath": [
+					"${workspaceFolder}"
+				],
+				"editor.formatOnSave": true
+			}
+		}
+	},
+	"remoteUser": "root"
+}
